@@ -5,5 +5,5 @@
 [FR] ***That level again*** est un jeu sorti en 2016 sur Android (https://play.google.com/store/apps/details?id=ru.iamtagir.game.android&hl=fr&gl=US) et iOS (https://apps.apple.com/fr/app/that-level-again/id1015720340). Le jeu est apparemment très simple, toujours au même niveau : il se compose d'une entrée, d'un bouton, d'une porte et d'une sortie. Mais encore, il faut sortir avec de plus en plus d'imagination à chaque fois. Un conseil : utilisez votre logique et votre stratégie.
 
 ### Original game / Jeu original
-Android : https://play.google.com/store/apps/details?id=ru.iamtagir.game.android&hl=fr&gl=US
-iOS : https://apps.apple.com/fr/app/that-level-again/id1015720340
+- Android : https://play.google.com/store/apps/details?id=ru.iamtagir.game.android&hl=fr&gl=US
+- iOS : https://apps.apple.com/fr/app/that-level-again/id1015720340
