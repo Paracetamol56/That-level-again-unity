@@ -19,6 +19,8 @@ public class Player_controler : MonoBehaviour
     public float GroundRadius;
     public LayerMask WhatGround;
     private bool Grounded;
+    //Apparence du joueur mort
+    public Sprite deadSprite;
 
     void Start()
     {
@@ -38,7 +40,6 @@ public class Player_controler : MonoBehaviour
         {
             playerRB.velocity = new Vector2(playerRB.velocity.x, 0f);
             playerRB.AddForce(new Vector2(0, jumpPower), ForceMode2D.Impulse);
-            Grounded = false;
         }
 
         playerAnim.SetFloat("VerticalVelocity", playerRB.velocity.y);
@@ -86,4 +87,12 @@ public class Player_controler : MonoBehaviour
         }
         return false;
     }
+    /*
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag == "Ouille")
+        {
+            playerRenderer.sprite = deadSprite;
+        }
+    }*/
 }
