@@ -20,16 +20,20 @@ public class Player_controler : MonoBehaviour
     public LayerMask WhatGround;
     private bool Grounded;
     //Apparence du joueur mort
-    public Sprite deadSprite;
+    public Transform DeadBody;
+    //Point de respawn
+    public Transform SpawnPoint;
 
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
         playerRenderer = GetComponent<SpriteRenderer>();
         playerAnim = GetComponent<Animator>();
+
+        Physics2D.IgnoreCollision(DeadBody.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
     }
 
-    
+
     void FixedUpdate()
     {
         Grounded = IsGrounded();
@@ -87,12 +91,23 @@ public class Player_controler : MonoBehaviour
         }
         return false;
     }
-    /*
+
+    public void killMe()
+    {
+        transform.position = SpawnPoint.position;
+    }
+
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag == "Ouille")
         {
-            playerRenderer.sprite = deadSprite;
+            DeadBody.position = transform.position;
+            DeadBody.GetComponent<Rigidbody2D>().velocity = playerRB.velocity;
+
+            transform.position = SpawnPoint.position;
+            playerRB.velocity = Vector3.zero;
+            if (!facingRight)
+                Flip();
         }
-    }*/
+    }
 }
