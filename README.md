@@ -7,3 +7,7 @@
 ### Original game / Jeu original
 - Android : https://play.google.com/store/apps/details?id=ru.iamtagir.game.android&hl=fr&gl=US
 - iOS : https://apps.apple.com/fr/app/that-level-again/id1015720340
+
+### Credits / Crédits
+Background music from PlayOnLoop.com
+Licensed under Creative Commons by Attribution 4.0
