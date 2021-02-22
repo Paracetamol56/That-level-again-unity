@@ -23,6 +23,7 @@ public class Player_controler : MonoBehaviour
     public Transform DeadBody;
     //Point de respawn
     public Transform SpawnPoint;
+    int deathTriggerCount = 1;
 
     void Start()
     {
@@ -36,6 +37,7 @@ public class Player_controler : MonoBehaviour
 
     void FixedUpdate()
     {
+        deathTriggerCount = 1;
         Grounded = IsGrounded();
         playerAnim.SetBool("Grounded", Grounded);
 
@@ -101,13 +103,17 @@ public class Player_controler : MonoBehaviour
     {
         if (col.tag == "Ouille")
         {
-            DeadBody.position = transform.position;
-            DeadBody.GetComponent<Rigidbody2D>().velocity = playerRB.velocity;
+            -- deathTriggerCount; //Cette variable sert a ne pas respawn plusieur fois au cas ou le joueur touche differnets "ouille" à la meme frame
+            if (deathTriggerCount == 0)
+            {
+                DeadBody.position = transform.position;
+                DeadBody.GetComponent<Rigidbody2D>().velocity = playerRB.velocity;
 
-            transform.position = SpawnPoint.position;
-            playerRB.velocity = Vector3.zero;
-            if (!facingRight)
-                Flip();
+                transform.position = SpawnPoint.position;
+                playerRB.velocity = Vector3.zero;
+                if (!facingRight)
+                    Flip();
+            }
         }
     }
 }
