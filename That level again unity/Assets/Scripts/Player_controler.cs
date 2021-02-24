@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_controler : MonoBehaviour
 {
@@ -114,6 +115,11 @@ public class Player_controler : MonoBehaviour
                 if (!facingRight)
                     Flip();
             }
+        }
+
+        else if (col.name == "TriggerSuccess")
+        {
+            SceneManager.LoadScene("Success", LoadSceneMode.Single);
         }
     }
 }
