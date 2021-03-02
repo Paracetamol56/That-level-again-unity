@@ -7,8 +7,8 @@ public class Pause_menu : MonoBehaviour
 {
     public bool GameIsPaused = false;
     public GameObject PauseMenuUI;
-    public AudioSource audioSource;
     public GameObject HelpMessage;
+    public Door_script Door;
 
     void Start()
     {
@@ -31,16 +31,22 @@ public class Pause_menu : MonoBehaviour
 
     public void Pause()
     {
+        if (SceneManager.GetActiveScene().buildIndex - 1 != 10)
+        {
+            Time.timeScale = 0f;
+        }
         PauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
         GameIsPaused = true;
         HelpMessage.SetActive(false);
     }
 
     public void Resume()
     {
+        if (SceneManager.GetActiveScene().buildIndex - 1 != 10)
+        {
+            Time.timeScale = 1f;
+        }
         PauseMenuUI.SetActive(false);
-        Time.timeScale = 1f;
         GameIsPaused = false;
     }
 
@@ -52,7 +58,14 @@ public class Pause_menu : MonoBehaviour
 
     public void MuteSound()
     {
-        audioSource.mute = !audioSource.mute;
+        Music_script.Instance.gameObject.GetComponent<Music_script>().ToogleMusic();
+        if (SceneManager.GetActiveScene().buildIndex - 1 == 9)
+        {
+            if (!Music_script.Instance.gameObject.GetComponent<AudioSource>().isPlaying)
+            {
+                Door.OpenDoor();
+            }
+        }
     }
 
     public void Help()

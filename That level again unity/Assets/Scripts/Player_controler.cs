@@ -20,11 +20,16 @@ public class Player_controler : MonoBehaviour
     public float GroundRadius;
     public LayerMask WhatGround;
     private bool Grounded;
+    //Game object de la porte
+    public Door_script Door;
     //Apparence du joueur mort
     public Transform DeadBody;
     //Point de respawn
     public Transform SpawnPoint;
     int deathTriggerCount = 1;
+
+    //Variable de Gameplay
+    int pressCount = 0;
 
     void Start()
     {
@@ -119,7 +124,41 @@ public class Player_controler : MonoBehaviour
 
         else if (col.name == "TriggerSuccess")
         {
-            SceneManager.LoadScene("Success", LoadSceneMode.Single);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
         }
+
+        else if (col.name == "Button")
+        {
+            switch (SceneManager.GetActiveScene().buildIndex - 1)
+            {
+                case 1:
+                    // 1. Plain and simple
+                    Door.OpenDoor();
+                    break;
+                case 2:
+                    // 2. Try more
+                    ++pressCount;
+                    if (pressCount > 5)
+                    {
+                        Door.OpenDoor();
+                    }
+                    break;
+                case 6:
+                    // 6. Press harder
+                    if (playerRB.velocity.y <= -10)
+                    {
+                        Door.OpenDoor();
+                    }
+                    break;
+            }
+        }
+
+        else if (col.name == "PauseButton")
+        {
+            if (SceneManager.GetActiveScene().buildIndex - 1 == 7)
+                Door.OpenDoor();
+        }
+
+
     }
 }

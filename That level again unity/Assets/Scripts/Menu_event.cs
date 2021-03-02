@@ -7,7 +7,7 @@ public class Menu_event : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("Level1", LoadSceneMode.Single);
     }
 
     public void LoadLevels()
