@@ -109,7 +109,7 @@ public class Player_controler : MonoBehaviour
     {
         if (col.tag == "Ouille")
         {
-            -- deathTriggerCount; //Cette variable sert a ne pas respawn plusieur fois au cas ou le joueur touche differnets "ouille" à la meme frame
+            --deathTriggerCount; //Cette variable sert a ne pas respawn plusieur fois au cas ou le joueur touche differnets "ouille" à la meme frame
             if (deathTriggerCount == 0)
             {
                 DeadBody.position = transform.position;
@@ -122,43 +122,48 @@ public class Player_controler : MonoBehaviour
             }
         }
 
-        else if (col.name == "TriggerSuccess")
+        switch (col.name)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
-        }
+            case "TriggerSuccess":
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
+                break;
 
-        else if (col.name == "Button")
-        {
-            switch (SceneManager.GetActiveScene().buildIndex - 1)
-            {
-                case 1:
-                    // 1. Plain and simple
+            case "Button":
+                switch (SceneManager.GetActiveScene().buildIndex - 1)
+                {
+                    case 1:
+                        // 1. Plain and simple
+                        Door.OpenDoor();
+                        break;
+                    case 2:
+                        // 2. Try more
+                        ++pressCount;
+                        if (pressCount > 5)
+                        {
+                            Door.OpenDoor();
+                        }
+                        break;
+                    case 6:
+                        // 6. Press harder
+                        if (playerRB.velocity.y <= -10)
+                        {
+                            Door.OpenDoor();
+                        }
+                        break;
+                }
+                break;
+
+            case "PauseButton":
+                if (SceneManager.GetActiveScene().buildIndex - 1 == 7)
                     Door.OpenDoor();
-                    break;
-                case 2:
-                    // 2. Try more
-                    ++pressCount;
-                    if (pressCount > 5)
-                    {
-                        Door.OpenDoor();
-                    }
-                    break;
-                case 6:
-                    // 6. Press harder
-                    if (playerRB.velocity.y <= -10)
-                    {
-                        Door.OpenDoor();
-                    }
-                    break;
-            }
+                break;
+
+            case "Block":
+                if (SceneManager.GetActiveScene().buildIndex - 1 == 11)
+                    Debug.Log("Là par exemple, je touche le block");
+                    col.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                    Door.OpenDoor();
+                break;
         }
-
-        else if (col.name == "PauseButton")
-        {
-            if (SceneManager.GetActiveScene().buildIndex - 1 == 7)
-                Door.OpenDoor();
-        }
-
-
     }
 }

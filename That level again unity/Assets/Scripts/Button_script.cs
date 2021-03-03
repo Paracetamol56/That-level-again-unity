@@ -22,21 +22,35 @@ public class Button_script : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (SceneIndex != 3 && SceneIndex != 5 && SceneIndex != 7 && SceneIndex != 8 && SceneIndex != 9)
+        switch (SceneIndex)
         {
-            if (col.tag == "Player")
-            {
-                buttonRenderer.sprite = spriteDown;
-                if (SceneIndex == 10)
+            case 1:
+            case 2:
+            case 4:
+            case 6:
+            case 10:
+                if (col.tag == "Player")
+                {
+                    buttonRenderer.sprite = spriteDown;
+                    if (SceneIndex == 10)
+                        Door.OpenDoor();
+                }
+                break;
+            case 5:
+                if (col.name == "DeadBody")
+                {
+                    buttonRenderer.sprite = spriteDown;
                     Door.OpenDoor();
-            }
+                }
+                break;
+            case 11:
+                if (col.name == "Block")
+                {
+                    buttonRenderer.sprite = spriteDown;
+                    Door.OpenDoor();
+                }
+                break;
         }
-        else if (SceneIndex == 5)
-            if (col.name == "DeadBody")
-            {
-                buttonRenderer.sprite = spriteDown;
-                Door.OpenDoor();
-            }
     }
 
     void OnTriggerExit2D(Collider2D col)
