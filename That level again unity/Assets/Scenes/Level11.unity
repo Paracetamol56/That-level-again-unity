@@ -2461,7 +2461,7 @@ GameObject:
   - component: {fileID: 1126241594}
   - component: {fileID: 1126241596}
   - component: {fileID: 1126241595}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2555,7 +2555,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 5
 --- !u!61 &1126241596
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5414,12 +5414,12 @@ PrefabInstance:
     - target: {fileID: 6577670102829465752, guid: 71d9407e01da3ca4e8a734884948b170,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.25
+      value: -7.703
       objectReference: {fileID: 0}
     - target: {fileID: 6577670102829465752, guid: 71d9407e01da3ca4e8a734884948b170,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.39
+      value: 0.456
       objectReference: {fileID: 0}
     - target: {fileID: 6577670102829465752, guid: 71d9407e01da3ca4e8a734884948b170,
         type: 3}

@@ -57,12 +57,15 @@ public class Button_script : MonoBehaviour
     {
         if (col.tag == "Player")
         {
-            buttonRenderer.sprite = spriteUp;
+            if (SceneIndex != 5)
+                buttonRenderer.sprite = spriteUp;
             if (SceneIndex == 10)
             {
                 if (!GameObject.Find("Canvas").GetComponent<Pause_menu>().GameIsPaused)
                     Door.CloseDoor();
             }
         }
+        else if (col.name == "DeadBody" && SceneIndex == 5)
+            buttonRenderer.sprite = spriteUp;
     }
 }

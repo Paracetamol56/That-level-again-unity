@@ -154,15 +154,27 @@ public class Player_controler : MonoBehaviour
                 break;
 
             case "PauseButton":
-                if (SceneManager.GetActiveScene().buildIndex - 1 == 7)
+                if (SceneManager.GetActiveScene().buildIndex == 8)
+                    // 7. Press pauses
                     Door.OpenDoor();
                 break;
 
             case "Block":
-                if (SceneManager.GetActiveScene().buildIndex - 1 == 11)
-                    Debug.Log("Là par exemple, je touche le block");
+                if (SceneManager.GetActiveScene().buildIndex  == 12)
+                {
+                    // 11. Something heavy
                     col.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                    col.GetComponent<Collider2D>().isTrigger = false;
                     Door.OpenDoor();
+                }
+                break;
+            case "Platforms_7":
+                if (SceneManager.GetActiveScene().buildIndex == 13)
+                {
+                    //12; Sometimes you are Mario
+                    col.GetComponent<SpriteRenderer>().enabled = false;
+                    col.GetComponent<Collider2D>().enabled = false;
+                }
                 break;
         }
     }
