@@ -31,7 +31,7 @@ public class Pause_menu : MonoBehaviour
 
     public void Pause()
     {
-        if (SceneManager.GetActiveScene().buildIndex - 1 != 10)
+        if (SceneManager.GetActiveScene().buildIndex != 11)
         {
             Time.timeScale = 0f;
         }
@@ -42,7 +42,7 @@ public class Pause_menu : MonoBehaviour
 
     public void Resume()
     {
-        if (SceneManager.GetActiveScene().buildIndex - 1 != 10)
+        if (SceneManager.GetActiveScene().buildIndex != 11)
         {
             Time.timeScale = 1f;
         }
