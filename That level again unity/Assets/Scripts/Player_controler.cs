@@ -13,8 +13,6 @@ public class Player_controler : MonoBehaviour
     public float maxSpeed;
     //Booleen pour connaitre la direction dans laquelle regarde le joueur
     private bool facingRight = true;
-    //Valeur de l'intensité des sauts
-    public float jumpPower;
     //Tableau de GroundPoints
     public Transform[] GroundPoints;
     public float GroundRadius;
@@ -51,7 +49,7 @@ public class Player_controler : MonoBehaviour
         if (Grounded && Input.GetAxis("Jump") > 0)
         {
             playerRB.velocity = new Vector2(playerRB.velocity.x, 0f);
-            playerRB.AddForce(new Vector2(0, jumpPower), ForceMode2D.Impulse);
+            playerRB.AddForce(new Vector2(0, Random.Range(10.0f, 11.0f)), ForceMode2D.Impulse);
         }
 
         playerAnim.SetFloat("VerticalVelocity", playerRB.velocity.y);
