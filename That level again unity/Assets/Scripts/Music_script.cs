@@ -2,13 +2,27 @@
 
 public class Music_script : MonoBehaviour
 {
-    private AudioSource _audioSource;
+    private AudioSource audioSource;
     private static Music_script instance = null;
     public static Music_script Instance { get { return instance; } }
 
     void Awake()
     {
-        _audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
+
+        if (PlayerPrefs.GetInt("Music") == 1)
+        {
+            audioSource.Play();
+        }
+        else if (PlayerPrefs.GetInt("Music") == 0)
+            {
+            audioSource.Stop();
+        }
+        else
+        {
+            PlayerPrefs.SetInt("Music", 1);
+            audioSource.Play();
+        }
 
         if (instance != null && instance != this)
         {
@@ -25,9 +39,15 @@ public class Music_script : MonoBehaviour
 
     public void ToogleMusic()
     {
-        if (_audioSource.isPlaying)
-            _audioSource.Stop();
+        if (audioSource.isPlaying)
+        {
+            audioSource.Stop();
+            PlayerPrefs.SetInt("Music", 0);
+        }
         else
-            _audioSource.Play();
+        {
+            audioSource.Play();
+            PlayerPrefs.SetInt("Music", 1);
+        }
     }
 }

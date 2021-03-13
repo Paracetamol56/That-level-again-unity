@@ -68,4 +68,9 @@ public class Button_script : MonoBehaviour
         else if (col.name == "DeadBody" && SceneIndex == 5)
             buttonRenderer.sprite = spriteUp;
     }
+
+    public void OnClick()
+    {
+        buttonRenderer.sprite = spriteDown;
+    }
 }

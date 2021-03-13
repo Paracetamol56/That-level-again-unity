@@ -34,6 +34,7 @@ public class Player_controler : MonoBehaviour
         playerRB = GetComponent<Rigidbody2D>();
         playerRenderer = GetComponent<SpriteRenderer>();
         playerAnim = GetComponent<Animator>();
+        Time.timeScale = 1; //lors de certain changements de frames, le jeu freeze donc cette ligne evite des problemes
 
         Physics2D.IgnoreCollision(DeadBody.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
     }
@@ -123,6 +124,7 @@ public class Player_controler : MonoBehaviour
         switch (col.name)
         {
             case "TriggerSuccess":
+                PlayerPrefs.SetInt("PlayerLevel", PlayerPrefs.GetInt("PlayerLevel") + 1);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
                 break;
 
