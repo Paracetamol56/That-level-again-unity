@@ -10,20 +10,6 @@ public class Music_script : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
 
-        if (PlayerPrefs.GetInt("Music") == 1)
-        {
-            audioSource.Play();
-        }
-        else if (PlayerPrefs.GetInt("Music") == 0)
-            {
-            audioSource.Stop();
-        }
-        else
-        {
-            PlayerPrefs.SetInt("Music", 1);
-            audioSource.Play();
-        }
-
         if (instance != null && instance != this)
         {
             Destroy(this.gameObject);
@@ -42,12 +28,10 @@ public class Music_script : MonoBehaviour
         if (audioSource.isPlaying)
         {
             audioSource.Stop();
-            PlayerPrefs.SetInt("Music", 0);
         }
         else
         {
             audioSource.Play();
-            PlayerPrefs.SetInt("Music", 1);
         }
     }
 }
