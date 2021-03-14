@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 276, y: 192}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 103
+  controlID: 113
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -567,7 +567,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 5efbffff
+      m_ExpandedIDs: fcb0ffff10b1ffff0ab2ffff0eb3ffff12b4ffff16b5ffff1ab6ffff1eb7ffff22b8ffff26b9ffff2abaffff2ebbffff32bcffff36bdffff42beffff64beffff72beffffc4bfffffd8bfffffe8bfffffecc0fffff0c1fffff4c2fffff8c3fffffcc4ffff00c6ffff04c7ffff08c8ffff0cc9ffff10caffff14cbffff18ccffff38ccffff46ccffff74ccffff88ccffff82cdffff86ceffff8acfffff8ed0ffff92d1ffff96d2ffff9ad3ffff9ed4ffffa2d5ffffa6d6ffffaad7ffffaed8ffffbad9ffffdcd9ffffead9ffff64dbffff78dbffff88dbffff8cdcffff90ddffff94deffff98dfffff9ce0ffffa0e1ffffa4e2ffffa8e3fffface4ffffb0e5ffffb4e6ffffb8e7ffffd8e7ffffe6e7ffff66e8ffff7ae8ffff74e9ffff78eaffff7cebffff80ecffff84edffff88eeffff8cefffff90f0ffff94f1ffff98f2ffff9cf3ffffa0f4ffffacf5ffffcef5ffffdcf5ffff5efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -852,19 +852,19 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Sprites
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Sprites
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\DUT\Sem 2\IHM2\That-level-again-unity\That level again unity
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 203b0000
-    m_LastClickedID: 15136
+    m_SelectedIDs: 223b0000
+    m_LastClickedID: 15138
     m_ExpandedIDs: 00000000003b0000023b0000043b0000063b0000083b00000a3b00000c3b00000e3b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -920,7 +920,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000283900000c390000fe38000012390000823a00004c390000f852000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

@@ -1365,7 +1365,7 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 22616c88e9c8fa26d3cc1e354d558a71
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Level_menu_event
@@ -1485,7 +1485,7 @@ ScriptsOnlyBuild:
     className: Music_script
   - hash:
       serializedVersion: 2
-      Hash: 3bacbe000798fd6fdbc84537906fdcaa
+      Hash: e530f10ce14cd0da828e061000a27a00
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player_controler
@@ -1848,5 +1848,5 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Level11.unity
   - Assets/Scenes/Level12.unity
   - Assets/Scenes/Success.unity
-  playerPath: D:/DUT/Sem 2/IHM2/That-level-again-unity/Stable builds/That level again
-    1.0 LINUX/That level again 1.0 LINUX.x86_64
+  playerPath: D:/DUT/Sem 2/IHM2/That-level-again-unity/Stable builds/Build 1.1/That
+    level again 1.1 LINUX/That level again 1.1.x86_64
