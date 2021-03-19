@@ -1848,5 +1848,5 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Level11.unity
   - Assets/Scenes/Level12.unity
   - Assets/Scenes/Success.unity
-  playerPath: D:/DUT/Sem 2/IHM2/That-level-again-unity/Builds/Build 1.1.1/That level
-    again 1.1.x86_64
+  playerPath: D:/DUT/Sem 2/IHM2/That-level-again-unity/Stable builds/Build 1.2/That
+    level again 1.1 LINUX/That level again 1.1.x86_64
